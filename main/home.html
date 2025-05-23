@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <!-- Metadati e collegamenti ai file CSS e JS -->
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
   <div class="wrapper">
       <ul aria-hidden="true">
           <li><a href="#" onclick="closeMenu()" aria-current="page">Home</a></li>
-          <li><a href="chiSiamo.html" onclick="closeMenu()">Chi siamo</a></li>
+          <li><a href="chi_siamo.html" onclick="closeMenu()">Chi siamo</a></li>
           <li><a href="#servizi" onclick="closeMenu()">Servizi</a></li>
           <li><a href="#contatti" onclick="closeMenu()">Contatti</a></li>
       </ul>
@@ -52,39 +52,42 @@
 
   <!-- Sezione con le card -->
   <div class="container d-flex justify-content-center flex-wrap gap-4 cards" id="cards">
-      <!-- Card 1 -->
-      <div class="g-col-4 card">
-        <div class="card-image">
-            <img src="../img/trasporto.webP" alt="Logistica">
+    <div class="g-col-4 card-flip">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="../img/trasporto.png" alt="Logistica">
+            </div>
+            <div class="card-back">
+                <h2 class="card-title">Trasporto</h2>
+                <p class="card-text">Disponiamo di semirimorchi centinati, centinati ribaltabili, piani mobili, ribaltabili laterali e posteriori con vasche.</p>
+            </div>
         </div>
-        <div class="card-content">
-            <h2 class="card-title">Trasporto</h2>
-            <p class="card-text">Disponiamo di semirimorchi centinati, centinati ribaltabili, piani mobili, ribaltabili laterali e posteriori con vasche.</p>
-        </div>
-      </div>
+    </div>
 
-      <!-- Card 2 -->
-      <div class="g-col-4 card">
-        <div class="card-image">
-            <img src="../img/ambiente.webP" alt="Trasporti Nazionali">
+    <div class="g-col-4 card-flip">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="../img/ambiente.webP" alt="Trasporti Nazionali">
+            </div>
+            <div class="card-back">
+                <h2 class="card-title">Ambiente</h2>
+                <p class="card-text">Presso la sede è installato un impianto fotovoltaico in grado di fornire il fabbisogno quotidiano di energia elettrica.</p>
+            </div>
         </div>
-        <div class="card-content">
-            <h2 class="card-title">Ambiente</h2>
-            <p class="card-text">Presso la sede è installato un impianto fotovoltaico in grado di fornire il fabbisogno quotidiano di energia elettrica.</p>
-        </div>
-      </div>
+    </div>
 
-      <!-- Card 3 -->
-      <div class="g-col-4 card">
-        <div class="card-image">
-            <img src="../img/magazzino.webP" alt="Trasporti Internazionali">
+    <div class="g-col-4 card-flip">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="../img/magazzino.png" alt="Trasporti Internazionali">
+            </div>
+            <div class="card-back">
+                <h2 class="card-title">Magazzino</h2>
+                <p class="card-text">La cooperativa dispone di spazi di magazzino in diverse località.</p>
+            </div>
         </div>
-        <div class="card-content">
-            <h2 class="card-title">Magazzino</h2>
-            <p class="card-text">La cooperativa dispone di spazi di magazzino in diverse località.</p>
-        </div>
-      </div>
-  </div>
+    </div>
+</div>
 
   <!-- Sezione di presentazione -->
   <section class="section2" id="section2">
@@ -165,6 +168,21 @@
   function closeMenu() {
     document.getElementById('active').checked = false;  
   }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Seleziona tutte le card con la classe 'card-flip'
+    const cards = document.querySelectorAll('.card-flip');
+
+    // Itera su ogni card e aggiungi un event listener per il click
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Trova l'elemento interno che deve ruotare
+            const cardInner = card.querySelector('.card-inner');
+            // Aggiungi o rimuovi la classe 'flipped'
+            card.classList.toggle('flipped'); // Aggiungiamo la classe al contenitore principale per consistenza
+        });
+    });
+});
 </script>
 
 <!-- Bootstrap JS -->

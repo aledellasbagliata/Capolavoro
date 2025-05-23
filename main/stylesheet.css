@@ -25,15 +25,15 @@
   z-index: 9999;
   right: 20px;
   top: 20px;
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
   background: var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
 }
 
@@ -56,7 +56,7 @@
   backdrop-filter: blur(10px);
 }
 
-#active:checked ~ .wrapper {
+#active:checked~.wrapper {
   clip-path: circle(150% at 100% 0%);
 }
 
@@ -85,7 +85,7 @@
 }
 
 .wrapper ul li a:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding-left: 35px;
 }
 
@@ -114,7 +114,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 2;
 }
 
@@ -133,7 +133,7 @@
   margin: 0 auto 2rem;
 }
 
-.typewriter1{
+.typewriter1 {
   margin: 0 auto;
   font-size: 2rem;
   color: rgba(255, 255, 255, 0.8);
@@ -143,9 +143,9 @@
   white-space: nowrap;
   letter-spacing: 2px;
   animation:
-  typing 12s steps(45) infinite,
-  blink-caret 4s step-end infinite;
-  }
+    typing 12s steps(45) infinite,
+    blink-caret 4s step-end infinite;
+}
 
 .typewriter {
   font-size: 1.5rem;
@@ -156,32 +156,40 @@
   white-space: nowrap;
   letter-spacing: 2px;
   animation:
-  typing 12s steps(45) infinite,
-  blink-caret 4s step-end infinite;
+    typing 12s steps(45) infinite,
+    blink-caret 4s step-end infinite;
+}
+
+@keyframes typing {
+
+  0%,
+  100% {
+    width: 0;
   }
-  
-  @keyframes typing {
-  0%, 100% {
-  width: 0;
-  }
+
   20% {
-  width: 100%;
+    width: 100%;
   }
+
   70% {
-  width: 100%; /* Mantiene il testo visibile più a lungo */
+    width: 100%;
+    /* Mantiene il testo visibile più a lungo */
   }
+
   90% {
-  width: 0;
+    width: 0;
   }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent;
   }
-  
-  @keyframes blink-caret {
-  from, to {
-  border-color: transparent;
-  }
-  50% {
-  }
-  }
+
+  50% {}
+}
 
 .divider-multi {
   position: relative;
@@ -191,46 +199,58 @@
   margin-top: 10vh;
   margin-bottom: 10vh;
   overflow: hidden;
-  }
-  
-  .divider-line {
+}
+
+.divider-line {
   position: absolute;
   width: 100%;
   height: 3px;
   background: linear-gradient(90deg, var(--primary), var(--secondary), var(--azzurro-chiaro));
   animation: wave 6s infinite linear;
-  }
-  
-  /* Linee multiple con posizioni e animazioni diverse */
-  .line-1 {
+}
+
+/* Linee multiple con posizioni e animazioni diverse */
+.line-1 {
   top: 20%;
   animation-delay: 0s;
   opacity: 0.8;
-  }
-  
-  .line-2 {
+}
+
+.line-2 {
   top: 45%;
   animation-direction: reverse;
   opacity: 0.6;
-  }
-  
-  .line-3 {
+}
+
+.line-3 {
   top: 70%;
   animation-delay: 1.5s;
   opacity: 0.4;
+}
+
+/* Animazione ondulata */
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
   }
-  
-  /* Animazione ondulata */
-  @keyframes wave {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+
+  100% {
+    transform: translateX(100%);
   }
-  
-  /* Animazione fluttuante */
-  @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+}
+
+/* Animazione fluttuante */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
 
 /* CARDS */
 
@@ -240,13 +260,20 @@
 
 /* Contenitore per l'effetto flip */
 .card-flip {
-  background-color: transparent; /* Importante per la trasparenza 3D */
-  width: 400px; /* Larghezza fissa come le card precedenti */
-  height: 300px; /* Altezza fissa (potrebbe essere necessario regolarla) */
-  perspective: 1000px; /* Definisce la prospettiva per gli elementi 3D */
-  cursor: pointer; /* Indica che la card è cliccabile */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Manteniamo l'ombra esterna */
-  border-radius: 10px; /* Bordi arrotondati */
+  background-color: transparent;
+  /* Importante per la trasparenza 3D */
+  width: 400px;
+  /* Larghezza fissa come le card precedenti */
+  height: 300px;
+  /* Altezza fissa (potrebbe essere necessario regolarla) */
+  perspective: 1000px;
+  /* Definisce la prospettiva per gli elementi 3D */
+  cursor: pointer;
+  /* Indica che la card è cliccabile */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  /* Manteniamo l'ombra esterna */
+  border-radius: 10px;
+  /* Bordi arrotondati */
 }
 
 /* Contenitore interno che ruota */
@@ -255,9 +282,12 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s; /* Velocità dell'animazione di flip */
-  transform-style: preserve-3d; /* Fondamentale per la rotazione 3D */
-  border-radius: 10px; /* Bordi arrotondati */
+  transition: transform 0.8s;
+  /* Velocità dell'animazione di flip */
+  transform-style: preserve-3d;
+  /* Fondamentale per la rotazione 3D */
+  border-radius: 10px;
+  /* Bordi arrotondati */
 }
 
 /* Quando la card è "flipped" */
@@ -266,71 +296,92 @@
 }
 
 /* Stili comuni per fronte e retro della card */
-.card-front, .card-back {
+.card-front,
+.card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Nasconde il lato posteriore durante la rotazione */
-  backface-visibility: hidden; /* Nasconde il lato posteriore durante la rotazione */
-  border-radius: 10px; /* Bordi arrotondati */
-  overflow: hidden; /* Assicura che l'immagine non sporga */
+  -webkit-backface-visibility: hidden;
+  /* Nasconde il lato posteriore durante la rotazione */
+  backface-visibility: hidden;
+  /* Nasconde il lato posteriore durante la rotazione */
+  border-radius: 10px;
+  /* Bordi arrotondati */
+  overflow: hidden;
+  /* Assicura che l'immagine non sporga */
 }
 
 /* Stili per il fronte della card */
 .card-front {
-  background-color: #fff; /* O il colore di sfondo delle tue card */
+  background-color: #fff;
+  /* O il colore di sfondo delle tue card */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Sposta il titolo in basso */
+  justify-content: space-between;
+  /* Sposta il titolo in basso */
   align-items: center;
-  padding: 0; /* Rimuovi padding per l'immagine a pieno formato */
+  padding: 0;
+  /* Rimuovi padding per l'immagine a pieno formato */
 }
 
 .card-front img {
   width: 100%;
-  height: 100%; /* L'immagine prende tutta l'altezza disponibile */
+  height: 100%;
+  /* L'immagine prende tutta l'altezza disponibile */
   object-fit: cover;
-  border-radius: 10px; /* Bordi arrotondati per l'immagine */
+  border-radius: 10px;
+  /* Bordi arrotondati per l'immagine */
 }
 
 .card-title-front {
-  position: absolute; /* Posiziona il titolo sopra l'immagine */
-  bottom: 0; /* In basso */
+  position: absolute;
+  /* Posiziona il titolo sopra l'immagine */
+  bottom: 0;
+  /* In basso */
   width: 100%;
-  background: rgba(0,0,0,0.6); /* Sfondo semi-trasparente per il titolo */
-  color: var(--primary); /* Colore del testo, come definito nella tua variabile */
+  background: rgba(0, 0, 0, 0.6);
+  /* Sfondo semi-trasparente per il titolo */
+  color: var(--primary);
+  /* Colore del testo, come definito nella tua variabile */
   padding: 10px 0;
   font-size: 1.2rem;
   text-align: center;
-  border-bottom-left-radius: 10px; /* Arrotonda gli angoli inferiori */
+  border-bottom-left-radius: 10px;
+  /* Arrotonda gli angoli inferiori */
   border-bottom-right-radius: 10px;
 }
 
 
 /* Stili per il retro della card */
 .card-back {
-  background-color: var(--primary); /* O un altro colore che si abbini al tema */
-  color: #fff; /* Testo bianco sul retro */
-  transform: rotateY(180deg); /* Inizialmente girato di 180 gradi */
+  background-color: var(--primary);
+  /* O un altro colore che si abbini al tema */
+  color: #fff;
+  /* Testo bianco sul retro */
+  transform: rotateY(180deg);
+  /* Inizialmente girato di 180 gradi */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  box-sizing: border-box; /* Include padding e border nella larghezza/altezza */
+  box-sizing: border-box;
+  /* Include padding e border nella larghezza/altezza */
 }
 
 .card-back .card-title {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #fff; /* Assicura che il titolo sia bianco */
+  color: #fff;
+  /* Assicura che il titolo sia bianco */
 }
 
 .card-back .card-text {
   font-size: 1rem;
   line-height: 1.5;
   text-align: center;
-  color: #fff; /* Assicura che il testo sia bianco */
+  color: #fff;
+  /* Assicura che il testo sia bianco */
 }
 
 /* Questo non serve più per l'effetto blur/overlay */
@@ -344,7 +395,7 @@
   margin-bottom: 10vh;
 }
 
-.section2-container{
+.section2-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -445,110 +496,16 @@
   background: var(--azzurro-chiaro);
 }
 
-.contact-info{
+.contact-info {
   display: flex;
   flex-direction: column;
 }
 
-.footer-mail{
+.footer-mail {
   text-decoration: none;
   color: #b3b3b3;
 }
 
-
-/* RESPONSIVE */
-@media (max-width: 992px) {
-  .hero-title {
-    max-width: 300px;
-  }
-  
-  .typewriter1 {
-    font-size: 1.3rem;
-  }
-  .footer-content {
-    flex-direction: column;
-  }
-  
-  .footer-section {
-    flex: 1 1 100%;
-    margin-bottom: 30px;
-  }
-
-  .section2-container{
-    width: 90%;
-    padding: 10px;
-  }
-
-  .text-content{
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .menu-btn {
-    right: 15px;
-    top: 15px;
-  }
-  
-  .wrapper ul li a {
-    font-size: 1rem;
-    padding: 12px 20px;
-  }
-  
-  .hero-section {
-    height: 80vh;
-  }
-  
-  .card-image img {
-    height: 200px;
-  }
-  #carouselExampleRide
-  {
-    width: 70%;
-  }
-
-  .carousel {
-    width: 80%;
-    height: auto;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-section {
-    height: 60vh;
-  }
-  
-  .hero-title {
-    max-width: 200px;
-  }
-  
-  .typewriter1 {
-    font-size: 1rem;
-  }
-
-  .typewriter{
-    font-size: 0.75rem;
-  }
-  
-  .card-image img {
-    height: auto;
-  }
-  
-  .card-content {
-    padding: 20px;
-  }
-
-  .carousel{
-    margin-bottom: 0px;
-  }
-
-  #carouselExampleRide
-  {
-    width: 70%;
-  }
-
-
-}
 
 .menu-btn:after {
   content: '';
@@ -561,7 +518,7 @@
   transition: transform 0.3s;
 }
 
-#active:checked ~ .menu-btn:after {
+#active:checked~.menu-btn:after {
   transform: scale(0);
 }
 
@@ -574,44 +531,45 @@
   pointer-events: none;
 }
 
-.carousel-container
-{
+.carousel-container {
   margin-top: 20vh;
   height: 400px;
   margin-bottom: 20vh;
 }
 
-.carousel{
+.carousel {
   width: 50%;
   border-radius: 20px;
   margin: 0 auto;
 }
-.carousel-item > img{
+
+.carousel-item>img {
   border-radius: 20px;
 }
 
-.testo-main
-{
+.testo-main {
   margin-bottom: 20vh;
 }
 
-.colonna-spazio1{
-  height: 300px;
-}
 
-.testo1, .testo2{
+.testo1,
+.testo2 {
   font-size: 1.4rem;
   border: 1px solid black;
 }
 
-.blu{
+.blu {
   color: var(--azzurro-chiaro);
 }
 
-.hero-section-chiSiamo
-{
-  height: 100vh;
+.hero-section-chiSiamo {
+  height: auto;
   background-color: var(--azzurro-chiaro);
+}
+
+.section2-chiSiamo1
+{
+  padding-left: 200px;
 }
 
 .divider-multi-chiSiamo {
@@ -622,13 +580,134 @@
   overflow: hidden;
 }
 
-.section2-chiSiamo
-{
-    margin: 0 auto;
-    padding: 60px 20px;
+.section2-chiSiamo {
+  margin: 0 auto;
 }
 
-.col-spazio
-{
+.col-spazio {
   height: 40vh;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+
+  .menu-btn
+  {
+    height: 90px;
+    width: 90px;
+  }
+
+  .hero-title {
+    max-width: 300px;
+  }
+
+  .typewriter1 {
+    font-size: 1.3rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-section {
+    flex: 1 1 100%;
+    margin-bottom: 30px;
+  }
+
+  .section2-container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .text-content {
+    font-size: 1.3rem;
+  }
+
+  .carousel
+  {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    right: 15px;
+    top: 15px;
+    height: 70px;
+    width: 70px;
+  }
+
+  .wrapper ul li a {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+
+  .hero-section {
+    height: 80vh;
+  }
+
+  .card-image img {
+    height: 200px;
+  }
+
+  #carouselExampleRide {
+    width: 70%;
+  }
+
+  .carousel {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    height: 60vh;
+  }
+
+  .hero-title {
+    max-width: 200px;
+  }
+
+  .typewriter1 {
+    font-size: 1rem;
+  }
+
+  .typewriter {
+    font-size: 0.75rem;
+  }
+
+  .card-image img {
+    height: auto;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .carousel {
+    margin-bottom: 0px;
+    width: 90%;
+  }
+
+  #carouselExampleRide {
+    width: 80%;
+  }
+
+  .carousel-container {
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    height: 400px;
+  }
+
+  .carousel-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col-spazio{
+    height: 0px;
+  }
 }
